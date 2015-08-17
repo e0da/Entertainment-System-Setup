@@ -1,0 +1,50 @@
+digraph G {
+
+  /* Power */
+  AC  ->  CableBox      [color=gray]
+  AC  ->  HTPC          [color=gray]
+  AC  ->  HTPCHDD       [color=gray]
+  AC  ->  Headphones    [color=gray]
+  AC  ->  Modem         [color=gray]
+  AC  ->  OUYA          [color=gray]
+  AC  ->  PlayStation3  [color=gray]
+  AC  ->  Router        [color=gray]
+  AC  ->  Soundbar      [color=gray]
+  AC  ->  TV            [color=gray]
+  AC  ->  Wii           [color=gray]
+  AC  ->  Xbox360       [color=gray]
+  AC  ->  Xbox          [color=gray]
+  AC  ->  XboxOne       [color=gray]
+
+  /* Coaxial cable */
+  Cable  ->  CableBox  [color=pink]
+  Cable  ->  Modem     [color=pink]
+
+  /* Ethernet */
+  Modem   ->  Router   [color=orange]
+  Router  ->  HTPC     [color=orange]
+  Router  ->  Xbox     [color=orange]
+  Router  ->  Xbox360  [color=orange]
+
+  /* HDMI */
+  HTPC          ->  TV       [color=blue]
+  OUYA          ->  TV       [color=blue]
+  PlayStation3  ->  TV       [color=blue]
+  Xbox360       ->  TV       [color=blue]
+  XboxOne       ->  TV       [color=blue]
+  CableBox      ->  XboxOne  [color=blue]
+
+  /* Component video */
+  Wii   ->  TV  [color=red]
+  Xbox  ->  TV  [color=red]
+
+  /* Miscellaneous */
+  HTPCHDD       ->  HTPC     [color=green]  /* eSATA */
+  IRReceiver    ->  HTPC     [color=green]  /* USB */
+  Kinect        ->  XboxOne  [color=green]  /* Kinect */
+  WiiSensorBar  ->  Wii      [color=green]  /* Wii Sensor Bar */
+
+  /* 3.5mm stereo */
+  TV  ->  Headphones  [color=purple]
+  TV  ->  Soundbar    [color=purple]
+}
